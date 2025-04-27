@@ -1,32 +1,23 @@
-<svg viewBox="0 0 800 1600" xmlns="http://www.w3.org/2000/svg">
-  <!-- Background -->
-  <rect width="800" height="1600" fill="#F5F7FA"/>
-  
-  <!-- Header Navigation -->
-  <rect x="0" y="0" width="800" height="70" fill="#1A2B4C"/>
-  
-  <!-- Logo -->
-  <rect x="20" y="15" width="100" height="40" rx="5" fill="#0FF4C6"/>
-  <text x="50" y="42" font-family="Arial" font-size="20" font-weight="bold" fill="#1A2B4C" text-anchor="middle">FORMI</text>
-  
-  <!-- Navigation Items -->
-  <text x="150" y="42" font-family="Arial" font-size="14" fill="white">Platforms ▼</text>
-  <text x="250" y="42" font-family="Arial" font-size="14" fill="white">Solutions ▼</text>
-  <text x="350" y="42" font-family="Arial" font-size="14" fill="white">Docs ▼</text>
-  <text x="430" y="42" font-family="Arial" font-size="14" fill="white">Community ▼</text>
-  <text x="535" y="42" font-family="Arial" font-size="14" fill="white">Enterprise</text>
-  <text x="620" y="42" font-family="Arial" font-size="14" fill="white">Pricing</text>
-  
-  <!-- Sign In Button -->
-  <rect x="670" y="20" width="60" height="30" rx="5" fill="none" stroke="white" stroke-width="1"/>
-  <text x="700" y="40" font-family="Arial" font-size="12" fill="white" text-anchor="middle">Sign In</text>
-  
-  <!-- Get Started Button -->
-  <rect x="740" y="20" width="40" height="30" rx="5" fill="url(#buttonGradient)"/>
-  <text x="760" y="40" font-family="Arial" font-size="10" fill="white" text-anchor="middle">Get Started</text>
-  
-  <!-- Button Gradient Definition -->
+<svg viewBox="0 0 800 1200" xmlns="http://www.w3.org/2000/svg">
+  <!-- Definitions for responsive behavior -->
   <defs>
+    <style>
+      @media (max-width: 768px) {
+        .hide-on-mobile { display: none; }
+        .mobile-adjust { font-size: 12px; }
+      }
+      .dropdown-content {
+        visibility: hidden;
+        opacity: 0;
+        transition: visibility 0s, opacity 0.3s;
+      }
+      .dropdown:hover .dropdown-content {
+        visibility: visible;
+        opacity: 1;
+      }
+    </style>
+    
+    <!-- Button Gradient Definition -->
     <linearGradient id="buttonGradient" x1="0%" y1="0%" x2="100%" y2="0%">
       <stop offset="0%" style="stop-color:#0FF4C6"/>
       <stop offset="100%" style="stop-color:#8A2BE2"/>
@@ -37,150 +28,223 @@
     </linearGradient>
   </defs>
   
+  <!-- Background -->
+  <rect width="800" height="1200" fill="#F5F7FA"/>
+  
+  <!-- Header Navigation -->
+  <rect x="0" y="0" width="800" height="55" fill="#1A2B4C"/>
+  
+  <!-- Logo -->
+  <rect x="20" y="12" width="70" height="30" rx="5" fill="#0FF4C6"/>
+  <text x="55" y="32" font-family="Arial" font-size="16" font-weight="bold" fill="#1A2B4C" text-anchor="middle">FORMI</text>
+  
+  <!-- Navigation Items with Dropdowns -->
+  <!-- Platforms Dropdown -->
+  <g class="dropdown">
+    <text x="140" y="32" font-family="Arial" font-size="12" fill="white" class="mobile-adjust">Platforms &#x25BC;</text>
+    <g class="dropdown-content">
+      <rect x="110" y="50" width="120" height="120" fill="white" rx="5"/>
+      <text x="170" y="70" font-family="Arial" font-size="11" fill="#1A2B4C" text-anchor="middle">Cloud Platform</text>
+      <text x="170" y="95" font-family="Arial" font-size="11" fill="#1A2B4C" text-anchor="middle">Mobile Platform</text>
+      <text x="170" y="120" font-family="Arial" font-size="11" fill="#1A2B4C" text-anchor="middle">Enterprise Suite</text>
+      <text x="170" y="145" font-family="Arial" font-size="11" fill="#1A2B4C" text-anchor="middle">API Services</text>
+    </g>
+  </g>
+  
+  <!-- Solutions Dropdown -->
+  <g class="dropdown">
+    <text x="230" y="32" font-family="Arial" font-size="12" fill="white" class="mobile-adjust">Solutions &#x25BC;</text>
+    <g class="dropdown-content">
+      <rect x="190" y="50" width="120" height="120" fill="white" rx="5"/>
+      <text x="250" y="70" font-family="Arial" font-size="11" fill="#1A2B4C" text-anchor="middle">For Retail</text>
+      <text x="250" y="95" font-family="Arial" font-size="11" fill="#1A2B4C" text-anchor="middle">For Healthcare</text>
+      <text x="250" y="120" font-family="Arial" font-size="11" fill="#1A2B4C" text-anchor="middle">For Finance</text>
+      <text x="250" y="145" font-family="Arial" font-size="11" fill="#1A2B4C" text-anchor="middle">For Education</text>
+    </g>
+  </g>
+  
+  <!-- Docs Dropdown -->
+  <g class="dropdown">
+    <text x="320" y="32" font-family="Arial" font-size="12" fill="white" class="mobile-adjust">Docs &#x25BC;</text>
+    <g class="dropdown-content">
+      <rect x="280" y="50" width="120" height="120" fill="white" rx="5"/>
+      <text x="340" y="70" font-family="Arial" font-size="11" fill="#1A2B4C" text-anchor="middle">API Reference</text>
+      <text x="340" y="95" font-family="Arial" font-size="11" fill="#1A2B4C" text-anchor="middle">Integration Guide</text>
+      <text x="340" y="120" font-family="Arial" font-size="11" fill="#1A2B4C" text-anchor="middle">User Manual</text>
+      <text x="340" y="145" font-family="Arial" font-size="11" fill="#1A2B4C" text-anchor="middle">FAQs</text>
+    </g>
+  </g>
+  
+  <!-- Community Dropdown -->
+  <g class="dropdown">
+    <text x="410" y="32" font-family="Arial" font-size="12" fill="white" class="mobile-adjust">Community &#x25BC;</text>
+    <g class="dropdown-content">
+      <rect x="370" y="50" width="120" height="120" fill="white" rx="5"/>
+      <text x="430" y="70" font-family="Arial" font-size="11" fill="#1A2B4C" text-anchor="middle">Forums</text>
+      <text x="430" y="95" font-family="Arial" font-size="11" fill="#1A2B4C" text-anchor="middle">Events</text>
+      <text x="430" y="120" font-family="Arial" font-size="11" fill="#1A2B4C" text-anchor="middle">Blog</text>
+      <text x="430" y="145" font-family="Arial" font-size="11" fill="#1A2B4C" text-anchor="middle">Support</text>
+    </g>
+  </g>
+  
+  <text x="490" y="32" font-family="Arial" font-size="12" fill="white" class="mobile-adjust hide-on-mobile">Enterprise</text>
+  <text x="560" y="32" font-family="Arial" font-size="12" fill="white" class="mobile-adjust hide-on-mobile">Pricing</text>
+  
+  <!-- Sign In Button -->
+  <rect x="620" y="12" width="60" height="30" rx="5" fill="none" stroke="white" stroke-width="1"/>
+  <text x="650" y="30" font-family="Arial" font-size="11" fill="white" text-anchor="middle">Sign In</text>
+  
+  <!-- Get Started Button -->
+  <rect x="690" y="12" width="90" height="30" rx="5" fill="url(#buttonGradient)"/>
+  <text x="735" y="30" font-family="Arial" font-size="11" fill="white" text-anchor="middle">Get Started</text>
+  
   <!-- Hero Section -->
-  <rect x="0" y="70" width="800" height="400" fill="url(#heroGradient)"/>
+  <rect x="0" y="55" width="800" height="280" fill="url(#heroGradient)"/>
   
   <!-- Abstract Digital Elements -->
-  <circle cx="100" cy="200" r="30" fill="#0FF4C6" opacity="0.1"/>
-  <circle cx="700" cy="300" r="50" fill="#8A2BE2" opacity="0.1"/>
-  <circle cx="200" cy="350" r="20" fill="#0FF4C6" opacity="0.1"/>
-  <circle cx="600" cy="150" r="40" fill="#8A2BE2" opacity="0.1"/>
-  <circle cx="400" cy="250" r="60" fill="#0FF4C6" opacity="0.05"/>
+  <circle cx="100" cy="165" r="20" fill="#0FF4C6" opacity="0.1"/>
+  <circle cx="700" cy="225" r="35" fill="#8A2BE2" opacity="0.1"/>
+  <circle cx="200" cy="265" r="15" fill="#0FF4C6" opacity="0.1"/>
+  <circle cx="600" cy="145" r="30" fill="#8A2BE2" opacity="0.1"/>
+  <circle cx="400" cy="195" r="40" fill="#0FF4C6" opacity="0.05"/>
   
   <!-- Connecting Lines -->
-  <line x1="100" y1="200" x2="200" y2="350" stroke="#0FF4C6" stroke-width="1" opacity="0.2"/>
-  <line x1="700" y1="300" x2="600" y2="150" stroke="#8A2BE2" stroke-width="1" opacity="0.2"/>
-  <line x1="200" y1="350" x2="400" y2="250" stroke="#0FF4C6" stroke-width="1" opacity="0.2"/>
-  <line x1="400" y1="250" x2="600" y2="150" stroke="#8A2BE2" stroke-width="1" opacity="0.2"/>
+  <line x1="100" y1="165" x2="200" y2="265" stroke="#0FF4C6" stroke-width="1" opacity="0.2"/>
+  <line x1="700" y1="225" x2="600" y2="145" stroke="#8A2BE2" stroke-width="1" opacity="0.2"/>
+  <line x1="200" y1="265" x2="400" y2="195" stroke="#0FF4C6" stroke-width="1" opacity="0.2"/>
+  <line x1="400" y1="195" x2="600" y2="145" stroke="#8A2BE2" stroke-width="1" opacity="0.2"/>
   
   <!-- Hero Content -->
-  <text x="400" y="180" font-family="Arial" font-size="30" font-weight="bold" fill="white" text-anchor="middle">The Future of Work is Here</text>
-  <text x="400" y="220" font-family="Arial" font-size="30" font-weight="bold" fill="white" text-anchor="middle">with Formi AI Agents</text>
-  <text x="400" y="260" font-family="Arial" font-size="16" fill="white" text-anchor="middle">Multi-lingual, context-aware AI assistants that serve your company 24/7</text>
+  <text x="400" y="140" font-family="Arial" font-size="24" font-weight="bold" fill="white" text-anchor="middle">The Future of Work is Here</text>
+  <text x="400" y="170" font-family="Arial" font-size="24" font-weight="bold" fill="white" text-anchor="middle">with Formi AI Agents</text>
+  <text x="400" y="200" font-family="Arial" font-size="14" fill="white" text-anchor="middle">Multi-lingual, context-aware AI assistants that serve your company 24/7</text>
   
   <!-- Hero Buttons -->
-  <rect x="300" y="300" width="100" height="40" rx="20" fill="none" stroke="white" stroke-width="1"/>
-  <text x="350" y="325" font-family="Arial" font-size="14" fill="white" text-anchor="middle">See Demos</text>
+  <rect x="300" y="230" width="80" height="30" rx="15" fill="none" stroke="white" stroke-width="1"/>
+  <text x="340" y="250" font-family="Arial" font-size="12" fill="white" text-anchor="middle">See Demos</text>
   
-  <rect x="420" y="300" width="120" height="40" rx="20" fill="url(#buttonGradient)"/>
-  <text x="480" y="325" font-family="Arial" font-size="14" fill="white" text-anchor="middle">Start Free Trial</text>
+  <rect x="400" y="230" width="120" height="30" rx="15" fill="url(#buttonGradient)"/>
+  <text x="460" y="250" font-family="Arial" font-size="12" fill="white" text-anchor="middle">Start Free Trial</text>
   
   <!-- Social Proof -->
-  <text x="400" y="380" font-family="Arial" font-size="12" fill="white" text-anchor="middle">Trusted by 500+ companies worldwide</text>
+  <text x="400" y="290" font-family="Arial" font-size="10" fill="white" text-anchor="middle">Trusted by 500+ companies worldwide</text>
   
   <!-- Company Logos -->
-  <rect x="250" y="390" width="50" height="20" rx="5" fill="white" opacity="0.5"/>
-  <rect x="320" y="390" width="50" height="20" rx="5" fill="white" opacity="0.5"/>
-  <rect x="390" y="390" width="50" height="20" rx="5" fill="white" opacity="0.5"/>
-  <rect x="460" y="390" width="50" height="20" rx="5" fill="white" opacity="0.5"/>
-  <rect x="530" y="390" width="50" height="20" rx="5" fill="white" opacity="0.5"/>
+  <rect x="250" y="300" width="40" height="15" rx="3" fill="white" opacity="0.5"/>
+  <rect x="300" y="300" width="40" height="15" rx="3" fill="white" opacity="0.5"/>
+  <rect x="350" y="300" width="40" height="15" rx="3" fill="white" opacity="0.5"/>
+  <rect x="400" y="300" width="40" height="15" rx="3" fill="white" opacity="0.5"/>
+  <rect x="450" y="300" width="40" height="15" rx="3" fill="white" opacity="0.5"/>
+  <rect x="500" y="300" width="40" height="15" rx="3" fill="white" opacity="0.5"/>
   
   <!-- Featured Agents Section -->
-  <text x="400" y="510" font-family="Arial" font-size="24" font-weight="bold" fill="#1A2B4C" text-anchor="middle">Our AI Agents</text>
+  <text x="400" y="370" font-family="Arial" font-size="20" font-weight="bold" fill="#1A2B4C" text-anchor="middle">Our AI Agents</text>
   
   <!-- Voice AI Card -->
-  <rect x="80" y="550" width="200" height="250" rx="10" fill="white" stroke="#E0E5EC" stroke-width="1"/>
-  <circle cx="180" cy="610" r="30" fill="#0FF4C6" opacity="0.2"/>
-  <path d="M170 610 Q180 595 190 610 Q180 625 170 610" stroke="#0FF4C6" stroke-width="2" fill="none"/>
-  <path d="M165 610 Q180 590 195 610 Q180 630 165 610" stroke="#0FF4C6" stroke-width="2" fill="none"/>
-  <path d="M160 610 Q180 585 200 610 Q180 635 160 610" stroke="#0FF4C6" stroke-width="2" fill="none"/>
-  <text x="180" y="680" font-family="Arial" font-size="18" font-weight="bold" fill="#1A2B4C" text-anchor="middle">Voice Intelligence</text>
-  <text x="180" y="710" font-family="Arial" font-size="12" fill="#666666" text-anchor="middle" width="180">Natural conversations across 40+</text>
-  <text x="180" y="730" font-family="Arial" font-size="12" fill="#666666" text-anchor="middle" width="180">languages with unprecedented</text>
-  <text x="180" y="750" font-family="Arial" font-size="12" fill="#666666" text-anchor="middle" width="180">context awareness</text>
+  <rect x="80" y="400" width="180" height="200" rx="10" fill="white" stroke="#E0E5EC" stroke-width="1"/>
+  <circle cx="170" cy="450" r="25" fill="#0FF4C6" opacity="0.2"/>
+  <path d="M160 450 Q170 435 180 450 Q170 465 160 450" stroke="#0FF4C6" stroke-width="2" fill="none"/>
+  <path d="M155 450 Q170 430 185 450 Q170 470 155 450" stroke="#0FF4C6" stroke-width="2" fill="none"/>
+  <path d="M150 450 Q170 425 190 450 Q170 475 150 450" stroke="#0FF4C6" stroke-width="2" fill="none"/>
+  <text x="170" y="500" font-family="Arial" font-size="16" font-weight="bold" fill="#1A2B4C" text-anchor="middle">Voice Intelligence</text>
+  <text x="170" y="525" font-family="Arial" font-size="10" fill="#666666" text-anchor="middle" width="160">Natural conversations across 40+</text>
+  <text x="170" y="540" font-family="Arial" font-size="10" fill="#666666" text-anchor="middle" width="160">languages with unprecedented</text>
+  <text x="170" y="555" font-family="Arial" font-size="10" fill="#666666" text-anchor="middle" width="160">context awareness</text>
   
   <!-- Chat AI Card -->
-  <rect x="300" y="550" width="200" height="250" rx="10" fill="white" stroke="#E0E5EC" stroke-width="1"/>
-  <rect x="370" y="595" width="60" height="45" rx="10" fill="#8A2BE2" opacity="0.2"/>
-  <circle cx="400" cy="615" r="5" fill="#8A2BE2"/>
-  <circle cx="385" cy="615" r="5" fill="#8A2BE2"/>
-  <circle cx="415" cy="615" r="5" fill="#8A2BE2"/>
-  <text x="400" y="680" font-family="Arial" font-size="18" font-weight="bold" fill="#1A2B4C" text-anchor="middle">Text Intelligence</text>
-  <text x="400" y="710" font-family="Arial" font-size="12" fill="#666666" text-anchor="middle" width="180">Smart text interactions that</text>
-  <text x="400" y="730" font-family="Arial" font-size="12" fill="#666666" text-anchor="middle" width="180">understand complex queries</text>
-  <text x="400" y="750" font-family="Arial" font-size="12" fill="#666666" text-anchor="middle" width="180">and organizational context</text>
+  <rect x="310" y="400" width="180" height="200" rx="10" fill="white" stroke="#E0E5EC" stroke-width="1"/>
+  <rect x="370" y="437" width="60" height="38" rx="10" fill="#8A2BE2" opacity="0.2"/>
+  <circle cx="400" cy="453" r="4" fill="#8A2BE2"/>
+  <circle cx="387" cy="453" r="4" fill="#8A2BE2"/>
+  <circle cx="413" cy="453" r="4" fill="#8A2BE2"/>
+  <text x="400" y="500" font-family="Arial" font-size="16" font-weight="bold" fill="#1A2B4C" text-anchor="middle">Text Intelligence</text>
+  <text x="400" y="525" font-family="Arial" font-size="10" fill="#666666" text-anchor="middle" width="160">Smart text interactions that</text>
+  <text x="400" y="540" font-family="Arial" font-size="10" fill="#666666" text-anchor="middle" width="160">understand complex queries</text>
+  <text x="400" y="555" font-family="Arial" font-size="10" fill="#666666" text-anchor="middle" width="160">and organizational context</text>
   
   <!-- Video AI Card -->
-  <rect x="520" y="550" width="200" height="250" rx="10" fill="white" stroke="#E0E5EC" stroke-width="1"/>
-  <rect x="580" y="590" width="80" height="50" rx="5" fill="#1A2B4C" opacity="0.2"/>
-  <circle cx="595" cy="605" r="3" fill="#0FF4C6"/>
-  <line x1="590" y1="620" x2="610" y2="620" stroke="#0FF4C6" stroke-width="1"/>
-  <line x1="615" y1="600" x2="640" y2="600" stroke="#0FF4C6" stroke-width="1"/>
-  <line x1="615" y1="610" x2="650" y2="610" stroke="#0FF4C6" stroke-width="1"/>
-  <line x1="615" y1="620" x2="635" y2="620" stroke="#0FF4C6" stroke-width="1"/>
-  <text x="620" y="680" font-family="Arial" font-size="18" font-weight="bold" fill="#1A2B4C" text-anchor="middle">Visual Intelligence</text>
-  <text x="620" y="710" font-family="Arial" font-size="12" fill="#666666" text-anchor="middle" width="180">Video-based agents that see,</text>
-  <text x="620" y="730" font-family="Arial" font-size="12" fill="#666666" text-anchor="middle" width="180">understand, and respond to</text>
-  <text x="620" y="750" font-family="Arial" font-size="12" fill="#666666" text-anchor="middle" width="180">visual information</text>
+  <rect x="540" y="400" width="180" height="200" rx="10" fill="white" stroke="#E0E5EC" stroke-width="1"/>
+  <rect x="590" y="435" width="70" height="40" rx="5" fill="#1A2B4C" opacity="0.2"/>
+  <circle cx="600" cy="445" r="3" fill="#0FF4C6"/>
+  <line x1="595" y1="460" x2="615" y2="460" stroke="#0FF4C6" stroke-width="1"/>
+  <line x1="620" y1="440" x2="645" y2="440" stroke="#0FF4C6" stroke-width="1"/>
+  <line x1="620" y1="450" x2="655" y2="450" stroke="#0FF4C6" stroke-width="1"/>
+  <line x1="620" y1="460" x2="640" y2="460" stroke="#0FF4C6" stroke-width="1"/>
+  <text x="630" y="500" font-family="Arial" font-size="16" font-weight="bold" fill="#1A2B4C" text-anchor="middle">Visual Intelligence</text>
+  <text x="630" y="525" font-family="Arial" font-size="10" fill="#666666" text-anchor="middle" width="160">Video-based agents that see,</text>
+  <text x="630" y="540" font-family="Arial" font-size="10" fill="#666666" text-anchor="middle" width="160">understand, and respond to</text>
+  <text x="630" y="555" font-family="Arial" font-size="10" fill="#666666" text-anchor="middle" width="160">visual information</text>
   
   <!-- Use Cases Section -->
-  <text x="400" y="850" font-family="Arial" font-size="24" font-weight="bold" fill="#1A2B4C" text-anchor="middle">Use Cases</text>
+  <text x="400" y="650" font-family="Arial" font-size="20" font-weight="bold" fill="#1A2B4C" text-anchor="middle">Use Cases</text>
   
   <!-- Use Cases Carousel -->
-  <rect x="80" y="880" width="640" height="180" rx="10" fill="#F5F7FA" stroke="#E0E5EC" stroke-width="1"/>
+  <rect x="100" y="675" width="600" height="140" rx="10" fill="#F5F7FA" stroke="#E0E5EC" stroke-width="1"/>
   
   <!-- Carousel Navigation -->
-  <circle cx="380" cy="1080" r="5" fill="#1A2B4C"/>
-  <circle cx="400" cy="1080" r="5" fill="#E0E5EC"/>
-  <circle cx="420" cy="1080" r="5" fill="#E0E5EC"/>
+  <circle cx="380" cy="830" r="4" fill="#1A2B4C"/>
+  <circle cx="400" cy="830" r="4" fill="#E0E5EC"/>
+  <circle cx="420" cy="830" r="4" fill="#E0E5EC"/>
   
   <!-- Carousel Items -->
-  <rect x="100" y="900" width="280" height="160" rx="10" fill="white" stroke="#E0E5EC" stroke-width="1"/>
-  <text x="240" y="940" font-family="Arial" font-size="16" font-weight="bold" fill="#1A2B4C" text-anchor="middle">Customer Service</text>
-  <text x="240" y="975" font-family="Arial" font-size="12" fill="#666666" text-anchor="middle" width="240">24/7 multi-channel support with</text>
-  <text x="240" y="995" font-family="Arial" font-size="12" fill="#666666" text-anchor="middle" width="240">voice, chat, and video capabilities</text>
-  <rect x="190" y="1020" width="100" height="25" rx="12.5" fill="#0FF4C6"/>
-  <text x="240" y="1037" font-family="Arial" font-size="12" fill="white" text-anchor="middle">Learn More</text>
+  <rect x="115" y="690" width="200" height="110" rx="10" fill="white" stroke="#E0E5EC" stroke-width="1"/>
+  <text x="215" y="720" font-family="Arial" font-size="14" font-weight="bold" fill="#1A2B4C" text-anchor="middle">Customer Service</text>
+  <text x="215" y="745" font-family="Arial" font-size="10" fill="#666666" text-anchor="middle" width="180">24/7 multi-channel support with</text>
+  <text x="215" y="760" font-family="Arial" font-size="10" fill="#666666" text-anchor="middle" width="180">voice, chat, and video capabilities</text>
+  <rect x="175" y="775" width="80" height="20" rx="10" fill="#0FF4C6"/>
+  <text x="215" y="788" font-family="Arial" font-size="10" fill="white" text-anchor="middle">Learn More</text>
   
-  <rect x="420" y="900" width="280" height="160" rx="10" fill="white" stroke="#E0E5EC" stroke-width="1"/>
-  <text x="560" y="940" font-family="Arial" font-size="16" font-weight="bold" fill="#1A2B4C" text-anchor="middle">Sales Enablement</text>
-  <text x="560" y="975" font-family="Arial" font-size="12" fill="#666666" text-anchor="middle" width="240">AI agents that qualify leads and</text>
-  <text x="560" y="995" font-family="Arial" font-size="12" fill="#666666" text-anchor="middle" width="240">assist with sales processes</text>
-  <rect x="510" y="1020" width="100" height="25" rx="12.5" fill="#0FF4C6"/>
-  <text x="560" y="1037" font-family="Arial" font-size="12" fill="white" text-anchor="middle">Learn More</text>
+  <rect x="485" y="690" width="200" height="110" rx="10" fill="white" stroke="#E0E5EC" stroke-width="1"/>
+  <text x="585" y="720" font-family="Arial" font-size="14" font-weight="bold" fill="#1A2B4C" text-anchor="middle">Sales Enablement</text>
+  <text x="585" y="745" font-family="Arial" font-size="10" fill="#666666" text-anchor="middle" width="180">AI agents that qualify leads and</text>
+  <text x="585" y="760" font-family="Arial" font-size="10" fill="#666666" text-anchor="middle" width="180">assist with sales processes</text>
+  <rect x="545" y="775" width="80" height="20" rx="10" fill="#0FF4C6"/>
+  <text x="585" y="788" font-family="Arial" font-size="10" fill="white" text-anchor="middle">Learn More</text>
   
   <!-- Integration Partners -->
-  <text x="400" y="1140" font-family="Arial" font-size="24" font-weight="bold" fill="#1A2B4C" text-anchor="middle">Integration Partners</text>
+  <text x="400" y="880" font-family="Arial" font-size="20" font-weight="bold" fill="#1A2B4C" text-anchor="middle">Integration Partners</text>
   
   <!-- Partner Logos Grid -->
-  <rect x="100" y="1170" width="100" height="50" rx="5" fill="white" stroke="#E0E5EC" stroke-width="1"/>
-  <rect x="220" y="1170" width="100" height="50" rx="5" fill="white" stroke="#E0E5EC" stroke-width="1"/>
-  <rect x="340" y="1170" width="100" height="50" rx="5" fill="white" stroke="#E0E5EC" stroke-width="1"/>
-  <rect x="460" y="1170" width="100" height="50" rx="5" fill="white" stroke="#E0E5EC" stroke-width="1"/>
-  <rect x="580" y="1170" width="100" height="50" rx="5" fill="white" stroke="#E0E5EC" stroke-width="1"/>
+  <rect x="115" y="900" width="80" height="40" rx="5" fill="white" stroke="#E0E5EC" stroke-width="1"/>
+  <rect x="215" y="900" width="80" height="40" rx="5" fill="white" stroke="#E0E5EC" stroke-width="1"/>
+  <rect x="315" y="900" width="80" height="40" rx="5" fill="white" stroke="#E0E5EC" stroke-width="1"/>
+  <rect x="415" y="900" width="80" height="40" rx="5" fill="white" stroke="#E0E5EC" stroke-width="1"/>
+  <rect x="515" y="900" width="80" height="40" rx="5" fill="white" stroke="#E0E5EC" stroke-width="1"/>
+  <rect x="615" y="900" width="80" height="40" rx="5" fill="white" stroke="#E0E5EC" stroke-width="1"/>
   
-  <rect x="100" y="1240" width="100" height="50" rx="5" fill="white" stroke="#E0E5EC" stroke-width="1"/>
-  <rect x="220" y="1240" width="100" height="50" rx="5" fill="white" stroke="#E0E5EC" stroke-width="1"/>
-  <rect x="340" y="1240" width="100" height="50" rx="5" fill="white" stroke="#E0E5EC" stroke-width="1"/>
-  <rect x="460" y="1240" width="100" height="50" rx="5" fill="white" stroke="#E0E5EC" stroke-width="1"/>
-  <rect x="580" y="1240" width="100" height="50" rx="5" fill="white" stroke="#E0E5EC" stroke-width="1"/>
+  <rect x="115" y="955" width="80" height="40" rx="5" fill="white" stroke="#E0E5EC" stroke-width="1"/>
+  <rect x="215" y="955" width="80" height="40" rx="5" fill="white" stroke="#E0E5EC" stroke-width="1"/>
+  <rect x="315" y="955" width="80" height="40" rx="5" fill="white" stroke="#E0E5EC" stroke-width="1"/>
+  <rect x="415" y="955" width="80" height="40" rx="5" fill="white" stroke="#E0E5EC" stroke-width="1"/>
+  <rect x="515" y="955" width="80" height="40" rx="5" fill="white" stroke="#E0E5EC" stroke-width="1"/>
+  <rect x="615" y="955" width="80" height="40" rx="5" fill="white" stroke="#E0E5EC" stroke-width="1"/>
   
   <!-- View All Button -->
-  <rect x="325" y="1320" width="150" height="40" rx="20" stroke="#1A2B4C" stroke-width="1" fill="none"/>
-  <text x="400" y="1345" font-family="Arial" font-size="14" fill="#1A2B4C" text-anchor="middle">View All Integrations</text>
+  <rect x="325" y="1020" width="150" height="30" rx="15" stroke="#1A2B4C" stroke-width="1" fill="none"/>
+  <text x="400" y="1040" font-family="Arial" font-size="12" fill="#1A2B4C" text-anchor="middle">View All Integrations</text>
   
   <!-- Pre-Footer CTA -->
-  <rect x="0" y="1380" width="800" height="150" fill="#1A2B4C"/>
-  <text x="400" y="1430" font-family="Arial" font-size="24" font-weight="bold" fill="white" text-anchor="middle">Ready to transform your workplace?</text>
+  <rect x="0" y="1070" width="800" height="100" fill="#1A2B4C"/>
+  <text x="400" y="1105" font-family="Arial" font-size="18" font-weight="bold" fill="white" text-anchor="middle">Ready to transform your workplace?</text>
   
   <!-- CTA Buttons -->
-  <rect x="300" y="1460" width="100" height="40" rx="20" fill="none" stroke="white" stroke-width="1"/>
-  <text x="350" y="1485" font-family="Arial" font-size="14" fill="white" text-anchor="middle">Talk to Sales</text>
+  <rect x="300" y="1125" width="80" height="30" rx="15" fill="none" stroke="white" stroke-width="1"/>
+  <text x="340" y="1145" font-family="Arial" font-size="12" fill="white" text-anchor="middle">Talk to Sales</text>
   
-  <rect x="420" y="1460" width="100" height="40" rx="20" fill="url(#buttonGradient)"/>
-  <text x="470" y="1485" font-family="Arial" font-size="14" fill="white" text-anchor="middle">Get Started</text>
+  <rect x="400" y="1125" width="100" height="30" rx="15" fill="url(#buttonGradient)"/>
+  <text x="450" y="1145" font-family="Arial" font-size="12" fill="white" text-anchor="middle">Get Started</text>
   
   <!-- Footer -->
-  <rect x="0" y="1530" width="800" height="70" fill="#F5F7FA"/>
+  <rect x="0" y="1170" width="800" height="30" fill="#F5F7FA"/>
   
   <!-- Footer Content -->
-  <text x="100" y="1565" font-family="Arial" font-size="14" font-weight="bold" fill="#1A2B4C">FORMI</text>
-  <text x="250" y="1565" font-family="Arial" font-size="12" fill="#666666">Platforms</text>
-  <text x="350" y="1565" font-family="Arial" font-size="12" fill="#666666">Solutions</text>
-  <text x="450" y="1565" font-family="Arial" font-size="12" fill="#666666">Company</text>
-  <text x="550" y="1565" font-family="Arial" font-size="12" fill="#666666">Legal</text>
-  <text x="650" y="1565" font-family="Arial" font-size="12" fill="#666666">Contact</text>
+  <text x="50" y="1190" font-family="Arial" font-size="10" font-weight="bold" fill="#1A2B4C">FORMI</text>
+  <text x="150" y="1190" font-family="Arial" font-size="10" fill="#666666">Platforms</text>
+  <text x="220" y="1190" font-family="Arial" font-size="10" fill="#666666">Solutions</text>
+  <text x="290" y="1190" font-family="Arial" font-size="10" fill="#666666">Company</text>
+  <text x="360" y="1190" font-family="Arial" font-size="10" fill="#666666">Legal</text>
+  <text x="410" y="1190" font-family="Arial" font-size="10" fill="#666666">Contact</text>
   
   <!-- Copyright -->
-  <text x="400" y="1590" font-family="Arial" font-size="10" fill="#666666" text-anchor="middle">© 2025 Formi AI. All rights reserved.</text>
+  <text x="580" y="1190" font-family="Arial" font-size="9" fill="#666666" text-anchor="middle">© 2025 Formi AI. All rights reserved.</text>
 </svg>
