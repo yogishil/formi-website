@@ -3,7 +3,7 @@ on:
   push:
     branches:
       - main  # Runs when changes are pushed to the main branch
-
+  workflow_dispatch:  # Enables manual execution from GitHub UI
 jobs:
   deploy:
     runs-on: ubuntu-latest  # Use a fresh Ubuntu runner
