@@ -10,10 +10,25 @@
         visibility: hidden;
         opacity: 0;
         transition: visibility 0s, opacity 0.3s;
+        pointer-events: none;
       }
-      .dropdown:hover .dropdown-content {
+      .dropdown:hover .dropdown-content,
+      .dropdown-content:hover {
         visibility: visible;
         opacity: 1;
+        pointer-events: all;
+        z-index: 100;
+      }
+      .dropdown-link {
+        cursor: pointer;
+      }
+      .dropdown-link:hover {
+        fill: #0FF4C6;
+      }
+      /* Gap filler style */
+      .gap-filler {
+        fill: transparent;
+        pointer-events: auto;
       }
     </style>
     
@@ -31,77 +46,10 @@
   <!-- Background -->
   <rect width="800" height="1200" fill="#F5F7FA"/>
   
-  <!-- Header Navigation -->
-  <rect x="0" y="0" width="800" height="55" fill="#1A2B4C"/>
-  
-  <!-- Logo -->
-  <rect x="20" y="12" width="70" height="30" rx="5" fill="#0FF4C6"/>
-  <text x="55" y="32" font-family="Arial" font-size="16" font-weight="bold" fill="#1A2B4C" text-anchor="middle">FORMI</text>
-  
-  <!-- Navigation Items with Dropdowns -->
-  <!-- Platforms Dropdown -->
-  <g class="dropdown">
-    <text x="140" y="32" font-family="Arial" font-size="12" fill="white" class="mobile-adjust">Platforms &#x25BC;</text>
-    <g class="dropdown-content">
-      <rect x="110" y="50" width="120" height="120" fill="white" rx="5"/>
-      <text x="170" y="70" font-family="Arial" font-size="11" fill="#1A2B4C" text-anchor="middle">Cloud Platform</text>
-      <text x="170" y="95" font-family="Arial" font-size="11" fill="#1A2B4C" text-anchor="middle">Mobile Platform</text>
-      <text x="170" y="120" font-family="Arial" font-size="11" fill="#1A2B4C" text-anchor="middle">Enterprise Suite</text>
-      <text x="170" y="145" font-family="Arial" font-size="11" fill="#1A2B4C" text-anchor="middle">API Services</text>
-    </g>
-  </g>
-  
-  <!-- Solutions Dropdown -->
-  <g class="dropdown">
-    <text x="230" y="32" font-family="Arial" font-size="12" fill="white" class="mobile-adjust">Solutions &#x25BC;</text>
-    <g class="dropdown-content">
-      <rect x="190" y="50" width="120" height="120" fill="white" rx="5"/>
-      <text x="250" y="70" font-family="Arial" font-size="11" fill="#1A2B4C" text-anchor="middle">For Retail</text>
-      <text x="250" y="95" font-family="Arial" font-size="11" fill="#1A2B4C" text-anchor="middle">For Healthcare</text>
-      <text x="250" y="120" font-family="Arial" font-size="11" fill="#1A2B4C" text-anchor="middle">For Finance</text>
-      <text x="250" y="145" font-family="Arial" font-size="11" fill="#1A2B4C" text-anchor="middle">For Education</text>
-    </g>
-  </g>
-  
-  <!-- Docs Dropdown -->
-  <g class="dropdown">
-    <text x="320" y="32" font-family="Arial" font-size="12" fill="white" class="mobile-adjust">Docs &#x25BC;</text>
-    <g class="dropdown-content">
-      <rect x="280" y="50" width="120" height="120" fill="white" rx="5"/>
-      <text x="340" y="70" font-family="Arial" font-size="11" fill="#1A2B4C" text-anchor="middle">API Reference</text>
-      <text x="340" y="95" font-family="Arial" font-size="11" fill="#1A2B4C" text-anchor="middle">Integration Guide</text>
-      <text x="340" y="120" font-family="Arial" font-size="11" fill="#1A2B4C" text-anchor="middle">User Manual</text>
-      <text x="340" y="145" font-family="Arial" font-size="11" fill="#1A2B4C" text-anchor="middle">FAQs</text>
-    </g>
-  </g>
-  
-  <!-- Community Dropdown -->
-  <g class="dropdown">
-    <text x="410" y="32" font-family="Arial" font-size="12" fill="white" class="mobile-adjust">Community &#x25BC;</text>
-    <g class="dropdown-content">
-      <rect x="370" y="50" width="120" height="120" fill="white" rx="5"/>
-      <text x="430" y="70" font-family="Arial" font-size="11" fill="#1A2B4C" text-anchor="middle">Forums</text>
-      <text x="430" y="95" font-family="Arial" font-size="11" fill="#1A2B4C" text-anchor="middle">Events</text>
-      <text x="430" y="120" font-family="Arial" font-size="11" fill="#1A2B4C" text-anchor="middle">Blog</text>
-      <text x="430" y="145" font-family="Arial" font-size="11" fill="#1A2B4C" text-anchor="middle">Support</text>
-    </g>
-  </g>
-  
-  <text x="490" y="32" font-family="Arial" font-size="12" fill="white" class="mobile-adjust hide-on-mobile">Enterprise</text>
-  <text x="560" y="32" font-family="Arial" font-size="12" fill="white" class="mobile-adjust hide-on-mobile">Pricing</text>
-  
-  <!-- Sign In Button -->
-  <rect x="620" y="12" width="60" height="30" rx="5" fill="none" stroke="white" stroke-width="1"/>
-  <text x="650" y="30" font-family="Arial" font-size="11" fill="white" text-anchor="middle">Sign In</text>
-  
-  <!-- Get Started Button -->
-  <rect x="690" y="12" width="90" height="30" rx="5" fill="url(#buttonGradient)"/>
-  <text x="735" y="30" font-family="Arial" font-size="11" fill="white" text-anchor="middle">Get Started</text>
-  
-  <!-- Hero Section -->
+  <!-- Hero Section (Moved earlier in the document so it appears under the dropdowns) -->
   <rect x="0" y="55" width="800" height="280" fill="url(#heroGradient)"/>
   
-  <!-- Abstract Digital Elements -->
+  <!-- Abstract Digital Elements (Moved earlier for proper stacking) -->
   <circle cx="100" cy="165" r="20" fill="#0FF4C6" opacity="0.1"/>
   <circle cx="700" cy="225" r="35" fill="#8A2BE2" opacity="0.1"/>
   <circle cx="200" cy="265" r="15" fill="#0FF4C6" opacity="0.1"/>
@@ -113,6 +61,27 @@
   <line x1="700" y1="225" x2="600" y2="145" stroke="#8A2BE2" stroke-width="1" opacity="0.2"/>
   <line x1="200" y1="265" x2="400" y2="195" stroke="#0FF4C6" stroke-width="1" opacity="0.2"/>
   <line x1="400" y1="195" x2="600" y2="145" stroke="#8A2BE2" stroke-width="1" opacity="0.2"/>
+  
+  <!-- Header Navigation (Moved after the Hero section for proper stacking) -->
+  <rect x="0" y="0" width="800" height="55" fill="#1A2B4C"/>
+  
+  <!-- Logo -->
+  <rect x="20" y="12" width="70" height="30" rx="5" fill="#0FF4C6"/>
+  <text x="55" y="32" font-family="Arial" font-size="16" font-weight="bold" fill="#1A2B4C" text-anchor="middle">FORMI</text>
+  
+  <!-- Navigation Items with Dropdowns - Now at the end of the document to be on top -->
+  <g>
+    <text x="490" y="32" font-family="Arial" font-size="12" fill="white" class="mobile-adjust hide-on-mobile">Enterprise</text>
+    <text x="560" y="32" font-family="Arial" font-size="12" fill="white" class="mobile-adjust hide-on-mobile">Pricing</text>
+    
+    <!-- Sign In Button -->
+    <rect x="620" y="12" width="60" height="30" rx="5" fill="none" stroke="white" stroke-width="1"/>
+    <text x="650" y="30" font-family="Arial" font-size="11" fill="white" text-anchor="middle">Sign In</text>
+    
+    <!-- Get Started Button -->
+    <rect x="690" y="12" width="90" height="30" rx="5" fill="url(#buttonGradient)"/>
+    <text x="735" y="30" font-family="Arial" font-size="11" fill="white" text-anchor="middle">Get Started</text>
+  </g>
   
   <!-- Hero Content -->
   <text x="400" y="140" font-family="Arial" font-size="24" font-weight="bold" fill="white" text-anchor="middle">The Future of Work is Here</text>
@@ -247,4 +216,93 @@
   
   <!-- Copyright -->
   <text x="580" y="1190" font-family="Arial" font-size="9" fill="#666666" text-anchor="middle">© 2025 Formi AI. All rights reserved.</text>
+  
+  <!-- Navigation Dropdowns - Placed at the very end of the SVG to ensure they appear at the top layer -->
+  <!-- Platforms Dropdown -->
+  <g class="dropdown">
+    <text x="140" y="32" font-family="Arial" font-size="12" fill="white" class="mobile-adjust">Platforms &#x25BC;</text>
+    <!-- Gap filler rectangle to connect dropdown trigger with content -->
+    <rect x="110" y="35" width="120" height="15" class="gap-filler"/>
+    <g class="dropdown-content">
+      <rect x="110" y="50" width="120" height="120" fill="white" rx="5"/>
+      <a xlink:href="productoverview.html">
+        <text x="170" y="70" font-family="Arial" font-size="11" fill="#1A2B4C" text-anchor="middle" class="dropdown-link">Product Overview</text>
+      </a>
+      <a xlink:href="integrations.html">
+        <text x="170" y="95" font-family="Arial" font-size="11" fill="#1A2B4C" text-anchor="middle" class="dropdown-link">Integrations</text>
+      </a>
+      <a xlink:href="templates.html">
+        <text x="170" y="120" font-family="Arial" font-size="11" fill="#1A2B4C" text-anchor="middle" class="dropdown-link">Templates</text>
+      </a>
+      <a xlink:href="#api-services">
+        <text x="170" y="145" font-family="Arial" font-size="11" fill="#1A2B4C" text-anchor="middle" class="dropdown-link">API Services</text>
+      </a>
+    </g>
+  </g>
+  
+  <!-- Solutions Dropdown -->
+  <g class="dropdown">
+    <text x="230" y="32" font-family="Arial" font-size="12" fill="white" class="mobile-adjust">Solutions &#x25BC;</text>
+    <!-- Gap filler rectangle to connect dropdown trigger with content -->
+    <rect x="190" y="35" width="120" height="15" class="gap-filler"/>
+    <g class="dropdown-content">
+      <rect x="190" y="50" width="120" height="120" fill="white" rx="5"/>
+      <a xlink:href="solution-sales.html">
+        <text x="250" y="70" font-family="Arial" font-size="11" fill="#1A2B4C" text-anchor="middle" class="dropdown-link">For Sales</text>
+      </a>
+      <a xlink:href="solution-lead-churn_1.html">
+        <text x="250" y="95" font-family="Arial" font-size="11" fill="#1A2B4C" text-anchor="middle" class="dropdown-link">For Marketing</text>
+      </a>
+      <a xlink:href="#finance-solutions">
+        <text x="250" y="120" font-family="Arial" font-size="11" fill="#1A2B4C" text-anchor="middle" class="dropdown-link">For Human Resources</text>
+      </a>
+      <a xlink:href="#education-solutions">
+        <text x="250" y="145" font-family="Arial" font-size="11" fill="#1A2B4C" text-anchor="middle" class="dropdown-link">For Education</text>
+      </a>
+    </g>
+  </g>
+  
+  <!-- Docs Dropdown -->
+  <g class="dropdown">
+    <text x="320" y="32" font-family="Arial" font-size="12" fill="white" class="mobile-adjust">Docs &#x25BC;</text>
+    <!-- Gap filler rectangle to connect dropdown trigger with content -->
+    <rect x="280" y="35" width="120" height="15" class="gap-filler"/>
+    <g class="dropdown-content">
+      <rect x="280" y="50" width="120" height="120" fill="white" rx="5"/>
+      <a xlink:href="#api-reference">
+        <text x="340" y="70" font-family="Arial" font-size="11" fill="#1A2B4C" text-anchor="middle" class="dropdown-link">API Reference</text>
+      </a>
+      <a xlink:href="#integration-guide">
+        <text x="340" y="95" font-family="Arial" font-size="11" fill="#1A2B4C" text-anchor="middle" class="dropdown-link">Integration Guide</text>
+      </a>
+      <a xlink:href="#user-manual">
+        <text x="340" y="120" font-family="Arial" font-size="11" fill="#1A2B4C" text-anchor="middle" class="dropdown-link">User Manual</text>
+      </a>
+      <a xlink:href="#faqs">
+        <text x="340" y="145" font-family="Arial" font-size="11" fill="#1A2B4C" text-anchor="middle" class="dropdown-link">FAQs</text>
+      </a>
+    </g>
+  </g>
+  
+  <!-- Community Dropdown -->
+  <g class="dropdown">
+    <text x="410" y="32" font-family="Arial" font-size="12" fill="white" class="mobile-adjust">Community &#x25BC;</text>
+    <!-- Gap filler rectangle to connect dropdown trigger with content -->
+    <rect x="370" y="35" width="120" height="15" class="gap-filler"/>
+    <g class="dropdown-content">
+      <rect x="370" y="50" width="120" height="120" fill="white" rx="5"/>
+      <a xlink:href="#forums">
+        <text x="430" y="70" font-family="Arial" font-size="11" fill="#1A2B4C" text-anchor="middle" class="dropdown-link">Forums</text>
+      </a>
+      <a xlink:href="#events">
+        <text x="430" y="95" font-family="Arial" font-size="11" fill="#1A2B4C" text-anchor="middle" class="dropdown-link">Events</text>
+      </a>
+      <a xlink:href="#blog">
+        <text x="430" y="120" font-family="Arial" font-size="11" fill="#1A2B4C" text-anchor="middle" class="dropdown-link">Blog</text>
+      </a>
+      <a xlink:href="#support">
+        <text x="430" y="145" font-family="Arial" font-size="11" fill="#1A2B4C" text-anchor="middle" class="dropdown-link">Support</text>
+      </a>
+    </g>
+  </g>
 </svg>
