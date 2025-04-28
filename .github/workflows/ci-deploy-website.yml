@@ -27,4 +27,4 @@ jobs:
 
     - name: Verify NGINX status
       run: |
-        ssh -i key.pem ubuntu@${{ secrets.INSTANCE_IP }} "sudo systemctl status nginx"
+        ssh -i key.pem ubuntu@${{ secrets.WEBSERVER_INSTANCE_IP }} "sudo systemctl status nginx"
