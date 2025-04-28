@@ -19,7 +19,7 @@ jobs:
         ssh -o StrictHostKeyChecking=no -i key.pem ubuntu@${{ secrets.WEBSERVER_INSTANCE_IP }} << EOF
           sudo cp -r /actions-runner/_work/formi-website/formi-website/* /repo/formi/
           sudo systemctl restart nginx
-          EOF
+        EOF
 #         cd /repo/formi
 #         git pull origin main
       env:
