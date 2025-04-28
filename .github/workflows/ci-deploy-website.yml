@@ -16,13 +16,13 @@ jobs:
       run: |
         echo "${{ secrets.AWS_SSH_KEY }}" > key.pem
         chmod 600 key.pem
-        ssh -o StrictHostKeyChecking=no -i key.pem ubuntu@${{ secrets.INSTANCE_IP }} << EOF
+        ssh -o StrictHostKeyChecking=no -i key.pem ubuntu@${{ secrets.WEBSERVER_INSTANCE_IP }} << EOF
           cd /var/www/html
           git pull origin main
           sudo systemctl restart nginx
         EOF
       env:
-        INSTANCE_IP: ${{ secrets.INSTANCE_IP }}  # Public IP of the EC2 instance
+        INSTANCE_IP: ${{ secrets.WEBSERVER_INSTANCE_IP }}  # Public IP of the EC2 instance
         AWS_SSH_KEY: ${{ secrets.AWS_SSH_KEY }}  # Stored private SSH key for authentication
 
     - name: Verify NGINX status
