@@ -1,0 +1,31 @@
+name: Deploy NGINX Server
+on:
+  push:
+    branches:
+      - main  # Runs when changes are pushed to the main branch
+  workflow_dispatch:  # Enables manual execution from GitHub UI
+jobs:
+  deploy:
+    runs-on: self-hosted  # Use a fresh Ubuntu runner
+
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v2  # Gets the latest code from the repository
+
+    - name: Set up SSH connection
+      run: |
+        echo "${{ secrets.AWS_SSH_KEY }}" > key.pem
+        chmod 600 key.pem
+        ssh -o StrictHostKeyChecking=no -i key.pem ubuntu@${{ secrets.WEBSERVER_INSTANCE_IP }} << EOF
+          sudo cp -r /actions-runner/_work/formi-website/formi-website/*.html /var/www/formi/
+          sudo systemctl restart nginx
+        EOF
+#         cd /repo/formi
+#         git pull origin main
+      env:
+        INSTANCE_IP: ${{ secrets.WEBSERVER_INSTANCE_IP }}  # Public IP of the EC2 instance
+        AWS_SSH_KEY: ${{ secrets.AWS_SSH_KEY }}  # Stored private SSH key for authentication
+
+    - name: Verify NGINX status
+      run: |
+        ssh -i key.pem ubuntu@${{ secrets.WEBSERVER_INSTANCE_IP }} "sudo systemctl status nginx"
