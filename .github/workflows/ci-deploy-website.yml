@@ -17,7 +17,7 @@ jobs:
         echo "${{ secrets.AWS_SSH_KEY }}" > key.pem
         chmod 600 key.pem
         ssh -o StrictHostKeyChecking=no -i key.pem ubuntu@${{ secrets.WEBSERVER_INSTANCE_IP }} << EOF
-          cp -r /actions-runner/_work/formi-website/formi-website/* /repo/formi/
+          sudo cp -r /actions-runner/_work/formi-website/formi-website/* /repo/formi/
           sudo systemctl restart nginx
           EOF
 #         cd /repo/formi
